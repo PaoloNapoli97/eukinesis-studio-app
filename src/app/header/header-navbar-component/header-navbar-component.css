@@ -1,0 +1,17 @@
+
+p {
+  color: white;
+}
+
+.list {
+  /* display: flex; */
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  padding: 0 20px;
+}
