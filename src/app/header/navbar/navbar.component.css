@@ -1,6 +1,6 @@
-p {
+/* p {
   color: white;
-}
+} */
 
 /* .list {
   display: flex;
@@ -12,5 +12,7 @@ ul{
 }
 
 li {
+  font-weight: 500;
+  list-style: none;
   padding: 0 20px;
 }

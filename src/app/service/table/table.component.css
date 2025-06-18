@@ -1,0 +1,8 @@
+td:nth-child(even) {
+  background: lightsalmon;
+}
+
+td {
+  border: 1px solid #FFFFFF;
+  padding: 3px 4px;
+}

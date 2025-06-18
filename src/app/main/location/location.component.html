@@ -1,0 +1,25 @@
+<section>
+  <h1 class="section-title">DOVE CI TROVIAMO</h1>
+  <div class="map-container">
+    <app-map /> 
+    <div class="position-text">
+      <a href="https://maps.google.com/maps?ll=37.515783,15.077035&z=19&t=m&hl=it&gl=US&mapclient=apiv3&cid=8122947406870052066">Via Cesare Vivante, 67 95123 Catania CT</a>
+      <table class="greyGridTable">
+        <thead>
+          <tr>
+            <th>Giorno</th>
+            <th>Orari</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (schedule of schedules; track $index) { 
+            <tr>
+              <app-table [day]="schedule.day" [hours]="schedule.hours"></app-table>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
