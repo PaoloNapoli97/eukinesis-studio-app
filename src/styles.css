@@ -8,12 +8,17 @@
 }
 
 body {
-  background-color: #FFFAF0;
+  background-color: #fdf4e3;
   margin: 0;
 }
 
 section {
-  padding: 100px 0;
+  margin: 100px 0;
+  padding: 60px 0;
+  width: 70%;
+  margin-left: auto; margin-right: auto;
+  background-color: white;
+  border-radius: 40px;
 }
 
 .section-title {
