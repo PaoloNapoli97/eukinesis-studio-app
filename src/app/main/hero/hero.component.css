@@ -28,10 +28,12 @@
 }
 
 .hero-content {
+  font-family: "Open Sans", Helvetica, sans-serif;
   position: relative;
   text-align: center;
-  width: 40%;
-  height: 100%;
+  margin: auto;
+  width: 30%;
+  /* height: 100%; */
   opacity: 0;
   color: white;
   transition: opacity 0.3s ease;
@@ -39,32 +41,68 @@
 }
 
 h2 {
-  position: absolute;
+  /* position: absolute;
   top: 20%;
-  left: 0; right: 0;
+  left: 0; right: 0; */
+  padding: 8px;
+  font-weight: 700;
   font-size: 30px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
 }
 
-p {
+/* Stato iniziale: le linee sono invisibili (larghezza 0) */
+h2::before,
+h2::after {
+  content: '';
   position: absolute;
+  background: #fff;
+  height: 2px;
+  width: 0;
+  transition: width 0.85s ease 0.25s;
+}
+
+/* Posizione delle linee */
+h2::before {
+  top: 0;
+  left: 0;
+}
+
+h2::after {
+  bottom: 0;
+  right: 0;
+}
+
+/* Hover: attiva l’animazione di espansione */
+.hero:hover h2::before,
+.hero:hover h2::after {
+  width: 100%;
+}
+p {
+  /* position: absolute;
   top: 40%;
-  left: 0; right: 0;
+  left: 0; right: 0; */
+  padding: 20px;
   font-size: 18px;
 }
 
 button {
-  position: absolute;
+  /* position: absolute;
   top: 80%;
   left: 0; right: 0;
   margin: auto;
-  width: 20%;
+  width: 20%; */
   border: none;
 
-  padding: 12px 30px;
-  border-radius: 8px;
+  height: 3.125em;
+  max-width: 30em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0 2.75em;
+  border-radius: 4px;
   color: white;
   background-color: lightsalmon;
-  font-weight: 700;
   cursor: pointer;
 }
 

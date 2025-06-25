@@ -3,3 +3,8 @@ div {
   display: flex;
   justify-content: center;
 }
+
+img {
+  width: 800px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
