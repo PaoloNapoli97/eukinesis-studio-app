@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <input type="text" name="full-name" placeholder="Nome e Cognome" required [(ngModel)]="fullName">
+  <input type="text" name="object" placeholder="Oggetto" required [(ngModel)]="object">
+  <textarea name="text" id="text" placeholder="Testo" [(ngModel)]="text"></textarea>
+  <button type="submit" [disabled]="f.invalid">Invia</button>
+</form>

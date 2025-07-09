@@ -28,7 +28,7 @@ table {
 }
 
 table.greyGridTable {
-  border: 2px solid lightsalmon;
+  border: 2px solid rgb(191, 120, 93);
   width: 100%;
   text-align: center;
   border-collapse: collapse;
@@ -42,14 +42,14 @@ table.greyGridTable tbody td {
 }
 
 table.greyGridTable thead {
-  border-bottom: 2px solid lightsalmon;
+  border-bottom: 2px solid rgb(191, 120, 93);
 }
 table.greyGridTable thead th {
   font-size: 15px;
   font-weight: bold;
-  color: lightsalmon;
+  color: rgb(140, 86, 65);
   text-align: center;
-  border-left: 2px solid #333333;
+  /* border-left: 2px solid #333333; */
 }
 table.greyGridTable thead th:first-child {
   border-left: none;

@@ -1,8 +1,8 @@
 td:nth-child(even) {
-  background: lightsalmon;
+  /* background: lightsalmon; */
 }
 
 td {
-  border: 1px solid #FFFFFF;
+  /* border: 1px solid #FFFFFF; */
   padding: 3px 4px;
 }
