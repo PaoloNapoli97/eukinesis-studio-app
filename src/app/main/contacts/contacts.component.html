@@ -1,6 +1,21 @@
-<form (ngSubmit)="onSubmit()" #f="ngForm">
-  <input type="text" name="full-name" placeholder="Nome e Cognome" required [(ngModel)]="fullName">
-  <input type="text" name="object" placeholder="Oggetto" required [(ngModel)]="object">
-  <textarea name="text" id="text" placeholder="Testo" [(ngModel)]="text"></textarea>
-  <button type="submit" [disabled]="f.invalid">Invia</button>
-</form>
+<section class="contacts-container">
+  <div>
+dwa
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <!-- Style Row -->
+      <div class="input-row">
+        <input type="text" name="full-name" placeholder="Nome e Cognome" required [(ngModel)]="fullName">
+        <input type="text" name="object" placeholder="Oggetto" required [(ngModel)]="object">
+      </div>
+      <textarea name="text" id="text" placeholder="Testo" required [(ngModel)]="text"></textarea>
+      <!-- Style Button Row -->
+      <div class="button-row">
+        <button type="submit" [disabled]="f.invalid">Invia</button>
+        <span>*Il servizio potrebbe non funzionare in base alle impostazioni dell'utente. Se questo dovesse essere il caso, si prega di usare l'email da noi fornita</span>
+      </div>
+    </form>
+  </div>
+</section>

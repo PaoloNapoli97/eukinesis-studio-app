@@ -2,3 +2,69 @@ h1 {
   text-align: center;
   margin: 35px 0 20px 0 !important;
 }
+
+.contacts-container{
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+}
+
+.form-container {
+  width: calc(50% - 20px);
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.input-row input {
+  border: none;
+  width: calc(50% - 20px);
+  padding: 10px 10px;
+}
+
+.form-container input:focus{
+  outline: none;
+}
+
+.form-container textarea {
+  border: none;
+  resize: none; /* Remove the resize icon (and feature) on the bottom right */
+
+  width: 100%;
+  height: 200px;
+  padding: 10px 10px;
+  margin-bottom: 30px;
+}
+
+.button-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-container button {
+  border: none;
+
+  height: 3.125em;
+  max-width: 30em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0 2.75em;
+  border-radius: 4px;
+  color: white;
+  background-color: lightsalmon;
+  cursor: pointer;
+}
+
+.form-container button:disabled{
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.form-container span {
+  margin-left: 30px;
+  font-size: smaller
+}
