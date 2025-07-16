@@ -52,7 +52,7 @@ h2 {
   letter-spacing: 2px;
 }
 
-/* Stato iniziale: le linee sono invisibili (larghezza 0) */
+/* Invisible lines, width set to 0 */
 h2::before,
 h2::after {
   content: '';
@@ -63,7 +63,7 @@ h2::after {
   transition: width 0.85s ease 0.25s;
 }
 
-/* Posizione delle linee */
+/* Position */
 h2::before {
   top: 0;
   left: 0;
@@ -74,11 +74,12 @@ h2::after {
   right: 0;
 }
 
-/* Hover: attiva l’animazione di espansione */
+/* Animation */
 .hero:hover h2::before,
 .hero:hover h2::after {
   width: 100%;
 }
+
 p {
   /* position: absolute;
   top: 40%;

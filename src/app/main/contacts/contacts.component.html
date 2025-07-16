@@ -1,6 +1,10 @@
 <section class="contacts-container">
-  <div>
-dwa
+  <div class="info-container">
+    <ul>
+      @for (item of contactList; track $index) {
+        <app-list [link]="item.link" [text]="item.title">Email </app-list>
+      }
+    </ul>
   </div>
 
   <div class="form-container">
