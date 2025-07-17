@@ -23,12 +23,13 @@ export class ContactsComponent {
   // }
 
   contactList = [
-    {description: 'Email',  link: 'mailto:info@eukinesistudio.it', title: 'info@eukinesistudio.it'},
-    { link: '', title: "392 123456789" }
+    {description: 'Email',  link: 'mailto:info@eukinesistudio.it', title: 'info@eukinesistudio.it', icon: 'envelope-solid.svg'},
+    {description: 'Telefono', link: 'https://wa.me/3518012460', title: "351 801 2460", icon: 'whatsapp-brands.svg'},
+    {description: 'Social', link: 'https://www.facebook.com/profile.php?id=61574823591904', title: 'Facebook', icon: 'facebook-brands.svg'}
   ]
   
   onSubmit() {
     let objectTitle: string  = `${this.fullName}: ${this.object}`;
-    window.location.href = `mailto:pingopallino9@gmail.com?subject=${objectTitle}&body=${this.text}`;
+    window.location.href = `mailto:info@eukinesistudio.it?subject=${objectTitle}&body=${this.text}`;
   }
 }

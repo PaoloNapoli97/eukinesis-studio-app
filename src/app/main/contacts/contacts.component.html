@@ -1,20 +1,29 @@
 <section class="contacts-container">
   <div class="info-container">
     <ul>
+
+      <!-- List of contacts information -->
       @for (item of contactList; track $index) {
-        <app-list [link]="item.link" [text]="item.title">Email </app-list>
+        <app-list [link]="item.link" [text]="item.title">
+          <h3>{{item.description}}: </h3>
+          <img [src]="item.icon" alt="">
+        </app-list>
       }
+
     </ul>
   </div>
 
+  <!-- Form for Email filling -->
   <div class="form-container">
     <form (ngSubmit)="onSubmit()" #f="ngForm">
+
       <!-- Style Row -->
       <div class="input-row">
         <input type="text" name="full-name" placeholder="Nome e Cognome" required [(ngModel)]="fullName">
         <input type="text" name="object" placeholder="Oggetto" required [(ngModel)]="object">
       </div>
       <textarea name="text" id="text" placeholder="Testo" required [(ngModel)]="text"></textarea>
+
       <!-- Style Button Row -->
       <div class="button-row">
         <button type="submit" [disabled]="f.invalid">Invia</button>
