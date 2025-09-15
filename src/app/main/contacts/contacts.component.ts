@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from "../../service/list/list.component";
@@ -25,7 +26,11 @@ export class ContactsComponent {
   contactList = [
     {description: 'Email',  link: 'mailto:info@eukinesistudio.it', title: 'info@eukinesistudio.it', icon: 'envelope-solid.svg'},
     {description: 'Telefono', link: 'https://wa.me/3518012460', title: "351 801 2460", icon: 'whatsapp-brands.svg'},
-    {description: 'Social', link: 'https://www.facebook.com/profile.php?id=61574823591904', title: 'Facebook', icon: 'facebook-brands.svg'}
+    {description: 'Socials', socials: [
+      {link: 'https://www.facebook.com/profile.php?id=61574823591904', title: 'Facebook', icon: 'facebook-brands.svg'},
+      {link: 'https://www.instagram.com/eukinesistudio/', title:'Instagram', icon:'instagram-brands-solid-full.svg'}
+      ]
+    }
   ]
   
   onSubmit() {

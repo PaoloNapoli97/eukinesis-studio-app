@@ -3,12 +3,36 @@
     <ul>
 
       <!-- List of contacts information -->
-      @for (item of contactList; track $index) {
+    @for (item of contactList; track $index) {
+      @if (!item.socials) {
+        <app-list [link]="item.link!" [text]="item.title!">
+          <h3>{{ item.description }}:</h3>
+          <img [src]="item.icon" alt="">
+        </app-list>
+      }
+
+      <!-- Add new section if array contain socials attribute -->
+      @if (item.socials) {
+        <li class="socials-list-container">
+          <h3>{{ item.description }}:</h3>
+          <!-- Divide to style in two rows-->
+          <div class="social-row">
+            @for (social of item.socials; track $index) {
+              <app-list [link]="social.link" [text]="social.title">
+                <img [src]="social.icon" alt="">
+              </app-list>
+            }
+          </div>
+        </li>
+      }
+    }
+
+      <!-- @for (item of contactList; track $index) {
         <app-list [link]="item.link" [text]="item.title">
           <h3>{{item.description}}: </h3>
           <img [src]="item.icon" alt="">
         </app-list>
-      }
+      } -->
 
     </ul>
   </div>

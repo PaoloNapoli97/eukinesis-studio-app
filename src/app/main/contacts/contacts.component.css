@@ -16,15 +16,30 @@ h1 {
 
 .info-container ul {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.info-container ul h3 {
+  width: 20%;
 }
 
 .info-container img {
   margin-right: 6px;
   width: 20px;
   /* filter: brightness(0) saturate(100%) invert(57%) sepia(94%) saturate(391%) hue-rotate(90deg) brightness(99%) contrast(87%); */
+}
+
+.socials-list-container {
+  display: flex;
+}
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 app-list {
