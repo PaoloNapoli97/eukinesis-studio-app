@@ -24,11 +24,12 @@ app-table {
 }
 
 table {
+  
   width: 80%;
 }
 
 table.greyGridTable {
-  border: 2px solid rgb(191, 120, 93);
+  /* border: 2px solid #4CAF50; */
   width: 100%;
   text-align: center;
   border-collapse: collapse;
@@ -42,12 +43,12 @@ table.greyGridTable tbody td {
 }
 
 table.greyGridTable thead {
-  border-bottom: 2px solid rgb(191, 120, 93);
+  border-bottom: 2px solid #4CAF50;
 }
 table.greyGridTable thead th {
   font-size: 15px;
   font-weight: bold;
-  color: rgb(140, 86, 65);
+  color: #4CAF50;;
   text-align: center;
   /* border-left: 2px solid #333333; */
 }

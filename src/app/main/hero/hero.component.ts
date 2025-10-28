@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
-
+  scrollToContacts(): void {
+    window.scrollTo({
+      top: 1800,
+      behavior: 'smooth'
+    });
+  }
 }

@@ -1,58 +1,64 @@
-<section class="contacts-container">
-  <div class="info-container">
-    <ul>
-
-      <!-- List of contacts information -->
-    @for (item of contactList; track $index) {
-      @if (!item.socials) {
-        <app-list [link]="item.link!" [text]="item.title!">
-          <h3>{{ item.description }}:</h3>
-          <img [src]="item.icon" alt="">
-        </app-list>
-      }
-
-      <!-- Add new section if array contain socials attribute -->
-      @if (item.socials) {
-        <li class="socials-list-container">
-          <h3>{{ item.description }}:</h3>
-          <!-- Divide to style in two rows-->
-          <div class="social-row">
-            @for (social of item.socials; track $index) {
-              <app-list [link]="social.link" [text]="social.title">
-                <img [src]="social.icon" alt="">
-              </app-list>
-            }
-          </div>
-        </li>
-      }
-    }
-
-      <!-- @for (item of contactList; track $index) {
-        <app-list [link]="item.link" [text]="item.title">
-          <h3>{{item.description}}: </h3>
-          <img [src]="item.icon" alt="">
-        </app-list>
-      } -->
-
-    </ul>
+<section>
+  <div class="section-title">
+    <h2>contatti</h2>
   </div>
 
-  <!-- Form for Email filling -->
-  <div class="form-container">
-    <form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div class="contacts-container">
+    <div class="info-container">
+      <ul>
 
-      <!-- Style Row -->
-      <div class="input-row">
-        <input type="text" name="full-name" placeholder="Nome e Cognome" required [(ngModel)]="fullName">
-        <input type="text" name="object" placeholder="Oggetto" required [(ngModel)]="object">
-      </div>
-      <textarea name="text" id="text" placeholder="Testo" required [(ngModel)]="text"></textarea>
+        <!-- List of contacts information -->
+      @for (item of contactList; track $index) {
+        @if (!item.socials) {
+          <app-list [link]="item.link!" [text]="item.title!">
+            <h3>{{ item.description }}:</h3>
+            <img [src]="item.icon" alt="">
+          </app-list>
+        }
 
-      <!-- Style Button Row -->
-      <div class="button-row">
-        <button type="submit" [disabled]="f.invalid">Invia</button>
-        <span>*Il servizio potrebbe non funzionare in base alle impostazioni dell'utente. Se questo dovesse essere il caso, si prega di usare l'email da noi fornita</span>
-      </div>
-    </form>
+        <!-- Add new section if array contain socials attribute -->
+        @if (item.socials) {
+          <li class="socials-list-container">
+            <h3>{{ item.description }}:</h3>
+            <!-- Divide to style in two rows-->
+            <div class="social-row">
+              @for (social of item.socials; track $index) {
+                <app-list [link]="social.link" [text]="social.title">
+                  <img [src]="social.icon" alt="">
+                </app-list>
+              }
+            </div>
+          </li>
+        }
+      }
+
+        <!-- @for (item of contactList; track $index) {
+          <app-list [link]="item.link" [text]="item.title">
+            <h3>{{item.description}}: </h3>
+            <img [src]="item.icon" alt="">
+          </app-list>
+        } -->
+
+      </ul>
+    </div>
+
+    <!-- Form for Email filling -->
+    <div class="form-container">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+
+        <!-- Style Row -->
+        <div class="input-row">
+          <input type="text" name="full-name" placeholder="Nome e Cognome" required [(ngModel)]="fullName">
+          <input type="text" name="object" placeholder="Oggetto" required [(ngModel)]="object">
+        </div>
+        <textarea name="text" id="text" placeholder="Testo" required [(ngModel)]="text"></textarea>
+
+        <!-- Style Button Row -->
+        <div class="button-row">
+          <button type="submit" [disabled]="f.invalid">Invia</button>
+          <span>*Il servizio potrebbe non funzionare in base alle impostazioni dell'utente. Se questo dovesse essere il caso, si prega di usare l'email da noi fornita</span>
+        </div>
+      </form>
+    </div>
   </div>
 </section>

@@ -50,6 +50,7 @@ app-list {
 
 .form-container {
   width: calc(60% - 20px);
+  
 }
 
 .input-row {
@@ -59,16 +60,18 @@ app-list {
 }
 
 .input-row input {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border: none;
   width: calc(50% - 20px);
   padding: 10px 10px;
 }
 
-.form-container input:focus{
+.form-container input:focus, textarea:focus{
   outline: none;
 }
 
 .form-container textarea {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border: none;
   resize: none; /* Remove the resize icon (and feature) on the bottom right */
 
@@ -77,6 +80,8 @@ app-list {
   padding: 10px 10px;
   margin-bottom: 30px;
 }
+
+
 
 .button-row{
   display: flex;
