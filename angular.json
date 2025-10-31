@@ -22,7 +22,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/eukinesis-studio-app",
+            "outputPath": {
+              "base": "dist/eukinesis-studio-app",
+              "browser": ""
+            },
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
