@@ -10,9 +10,9 @@ import { TableComponent } from "../../service/table/table.component";
 })
 export class LocationComponent {
   schedules = [
-    { day: 'Lunedì', hours: '10-12 / 16-20' },
+    { day: 'Lunedì', hours: '16-20' },
     { day: 'Martedì', hours: '09-12 / 16-20' },
-    { day: 'Mercoledì', hours: '10-12 / 16-20' },
+    { day: 'Mercoledì', hours: '16-20' },
     { day: 'Giovedì', hours: '09-12 / 16-20' },
     { day: 'Venerdì', hours: '16-20' }
   ];
