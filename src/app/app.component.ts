@@ -4,10 +4,11 @@ import { Meta, Title } from '@angular/platform-browser';
 
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from "./main/main.component";
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, MainComponent],
+  imports: [RouterOutlet, HeaderComponent, MainComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
