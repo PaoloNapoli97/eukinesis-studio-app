@@ -23,7 +23,7 @@ export class NavbarComponent {
 
   scrollToLocation(): void {
     window.scrollTo({
-      top: 1100,
+      top: 2200,
       behavior: 'smooth'
     });
   }
