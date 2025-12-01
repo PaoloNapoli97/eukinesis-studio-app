@@ -1,0 +1,8 @@
+<section>
+  <div class="section-title">
+    <h2>I nostri Servizi</h2>
+    @for (service of OurServices; track $index) {
+      <app-card [image]="service.Image" [imageAlt]="service.ImageAlt" [textTitle]="service.TextTitle" [textBody]="service.TextBody"></app-card>
+    } 
+  </div>
+</section>
