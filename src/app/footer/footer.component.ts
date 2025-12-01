@@ -34,4 +34,5 @@ export class FooterComponent {
   imports: [MatDialogModule, MatButtonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterPopup {}
+export class FooterPopup{
+}
