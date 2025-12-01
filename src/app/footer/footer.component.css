@@ -14,8 +14,13 @@ ul{
   width: 50%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 li{
   list-style: none;
+}
+
+button {
+  padding: ;
 }
