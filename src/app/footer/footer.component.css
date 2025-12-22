@@ -11,12 +11,35 @@ footer {
 ul{
   margin: 0;
   /* background-color: gray; */
-  width: 50%;
+
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 li{
   list-style: none;
+}
+
+/* MEDIA RESPONSIVE */
+/* DESKTOP */
+@media (min-width: 992px){
+  ul{
+    width: 90%;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 991px) {
+  ul{
+    width: 80%;
+  }
+}
+
+/* PHONE */
+@media (max-width: 767px){
+  ul{
+    width: 100%;
+  }
 }

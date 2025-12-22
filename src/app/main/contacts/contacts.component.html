@@ -11,7 +11,9 @@
       @for (item of contactList; track $index) {
         @if (!item.socials) {
           <app-list [link]="item.link!" [text]="item.title!">
-            <h3>{{ item.description }}:</h3>
+            <div class="contact-title">
+              <h3>{{ item.description }}:</h3>
+            </div>
             <img [src]="item.icon" alt="">
           </app-list>
         }
@@ -19,7 +21,9 @@
         <!-- Add new section if array contain socials attribute -->
         @if (item.socials) {
           <li class="socials-list-container">
-            <h3>{{ item.description }}:</h3>
+            <div class="contact-title">
+              <h3>{{ item.description }}:</h3>
+            </div>
             <!-- Divide to style in two rows-->
             <div class="social-row">
               @for (social of item.socials; track $index) {

@@ -13,6 +13,6 @@ export class OurServicesComponent {
     { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'RIEDUCAZIONE POSTURALE', TextBody: 'Percorsi mirati per migliorare la postura, ridurre dolori cronici e ritrovare una corretta percezione del corpo.'},
     { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'ATTIVITÀ FISICA ADATTATA', TextBody: 'Programmi di esercizi personalizzati in base all’età, al livello di forma fisica e agli obiettivi individuali.'},
     { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'PILATES', TextBody: 'Allenamento a corpo libero per rafforzare il core, migliorare equilibrio e flessibilità, e prevenire disturbi posturali.'},
-    { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'REHAB PERSONAL TRAINING', TextBody: 'AAllenamenti individuali con approccio chinesiologico per ottimizzare performance, postura e benessere globale.'}
+    { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'REHAB PERSONAL TRAINING', TextBody: 'Allenamenti individuali con approccio chinesiologico per ottimizzare performance, postura e benessere globale.'}
   ]
 }

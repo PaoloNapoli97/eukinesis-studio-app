@@ -1,0 +1,16 @@
+/* MEDIA RESPONSIVE */
+
+/* DESKTOP */
+@media (min-width: 992px){
+  img {width: 100%};
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 991px) {
+    img {width: 160px};
+}
+
+/* PHONE */
+@media (max-width: 767px){
+      img {width: 100px};
+}

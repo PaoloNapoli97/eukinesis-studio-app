@@ -1,8 +1,38 @@
 h1 {
   text-align: center;
-  font-size: 3.5rem;
 }
 
-.smallerH1size {
-  font-size: 1.8rem;
+/* MEDIA RESPONSIVE */
+
+/* DESKTOP */
+@media (min-width: 992px){
+  h1 {
+      font-size: 3.5rem;
+  }
+
+  .smallerH1size {
+    font-size: 1.8rem;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  .smallerH1size {
+    font-size: 1.4rem;
+  }
+}
+
+/* PHONE */
+@media (max-width: 767px){
+  h1 {
+      font-size: 2rem;
+  }
+
+  .smallerH1size {
+    font-size: 1rem;
+  }
 }
