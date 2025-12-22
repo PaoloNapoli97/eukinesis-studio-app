@@ -10,6 +10,7 @@ footer {
 
 ul{
   margin: 0;
+  padding: 0;
   /* background-color: gray; */
 
   display: flex;
@@ -34,6 +35,7 @@ li{
 @media (min-width: 768px) and (max-width: 991px) {
   ul{
     width: 80%;
+        font-size: 0.8em;
   }
 }
 
@@ -41,5 +43,10 @@ li{
 @media (max-width: 767px){
   ul{
     width: 100%;
+    font-size: 0.3em;
+  }
+
+  li{
+    padding: 0 2px;
   }
 }

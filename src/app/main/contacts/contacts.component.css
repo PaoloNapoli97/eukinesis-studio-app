@@ -196,6 +196,7 @@ app-list {
     display: flex;
   }
   
+
   .info-container ul{
     width: 100%;
     display: flex;
@@ -245,7 +246,8 @@ app-list {
 
   app-list{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    font-size: 10px;
   }
   
   .info-container ul{
@@ -258,7 +260,7 @@ app-list {
   }
 
   .socials-list-container{
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
   }
 
@@ -268,8 +270,9 @@ app-list {
   }
 
   .contact-title {
+    font-size: 10px;
     width: 30%;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .form-container {

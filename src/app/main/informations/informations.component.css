@@ -86,6 +86,6 @@ p {
 /* PHONE */
 @media (max-width: 767px){
   p { 
-    font-size: 1.25em;
+    font-size: 0.7em;
   }
 }
