@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -12,5 +12,13 @@ export class HeroComponent {
       top: 1800,
       behavior: 'smooth'
     });
+  }
+
+  ngAfterViewInit() {
+    if (window.innerWidth < 991) {
+      setTimeout(() => {
+        document.querySelector("h2")?.classList.add("animate");
+      }, 50)
+    }
   }
 }
