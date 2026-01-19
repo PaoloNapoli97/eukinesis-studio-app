@@ -61,7 +61,6 @@ p {
   /* position: absolute;
   top: 40%;
   left: 0; right: 0; */
-
 }
 
 button {
@@ -156,7 +155,7 @@ button {
   h2::before, h2::after {
     width: 100%;
     transition: width 0.85s ease 1.5s;
-    transition-delay: 200ms;
+    transition-delay: 2000ms;
   }
 
   h2{ 
@@ -190,7 +189,7 @@ button {
   h2::before, h2::after {
     width: 100%;
     transition: width 0.85s ease 1.5s;
-    transition-delay: 200ms;
+    transition-delay: 2000ms;
   }
 
   h2{ 
