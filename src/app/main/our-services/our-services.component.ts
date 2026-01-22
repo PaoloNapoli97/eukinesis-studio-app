@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CardComponent } from "../../service/card/card.component";
 
 @Component({
@@ -15,4 +15,26 @@ export class OurServicesComponent {
     { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'PILATES', TextBody: 'Allenamento a corpo libero per rafforzare il core, migliorare equilibrio e flessibilità, e prevenire disturbi posturali.'},
     { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'REHAB PERSONAL TRAINING', TextBody: 'Allenamenti individuali con approccio chinesiologico per ottimizzare performance, postura e benessere globale.'}
   ]
+
+  private ourService = document.getElementById('ourServices');
+  private flag = false
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const y = window.scrollY;
+    const ourServicesY = this.ourService!.getBoundingClientRect().top + window.scrollY;
+    // 1777.3125
+
+    if (y >= ourServicesY - 100 && !this.flag) {
+      const elements = document.getElementsByClassName('anim');
+
+      for ( const el of elements) {
+        el.classList.add("animate");
+      }
+
+      this.flag = true;
+      console.log("fine");
+      
+    }
+  }
 }

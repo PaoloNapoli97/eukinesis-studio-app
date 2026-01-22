@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, ElementRef, viewChild } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,11 +7,9 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
+
   scrollToContacts(): void {
-    window.scrollTo({
-      top: 1800,
-      behavior: 'smooth'
-    });
+    document.getElementById("contacts")!.scrollIntoView({ behavior: 'smooth', block: "start"});
   }
 
   ngAfterViewInit() {
