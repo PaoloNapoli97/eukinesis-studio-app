@@ -8,23 +8,18 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   scrollToInfo(){
-    window.scrollTo({
-      top: 1100,
-      behavior: 'smooth'
-    });
+    document.getElementById("aboutUs")!.scrollIntoView({ behavior: 'smooth', block: "start"});
   }
 
   scrollToContacts(): void {
-    window.scrollTo({
-      top: 1800,
-      behavior: 'smooth'
-    });
+    document.getElementById("contacts")!.scrollIntoView({ behavior: 'smooth', block: "start"});
   }
 
   scrollToLocation(): void {
-    window.scrollTo({
-      top: 2200,
-      behavior: 'smooth'
-    });
+    document.getElementById("location")!.scrollIntoView({ behavior: 'smooth', block: "start"});
+  }
+
+  scrollToOurServices(): void {
+    document.getElementById("ourServices")!.scrollIntoView({ behavior: 'smooth', block: "start"});
   }
 }

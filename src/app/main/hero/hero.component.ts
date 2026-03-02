@@ -12,6 +12,7 @@ export class HeroComponent {
     document.getElementById("contacts")!.scrollIntoView({ behavior: 'smooth', block: "start"});
   }
 
+  // Animation class add for tablet and phone
   ngAfterViewInit() {
     if (window.innerWidth < 991) {
       setTimeout(() => {

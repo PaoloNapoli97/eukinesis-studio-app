@@ -9,11 +9,11 @@ import { CardComponent } from "../../service/card/card.component";
 })
 export class OurServicesComponent {
   OurServices = [
-    { Image: 'placeholder-image-sport.png', ImageAlt: 'Eukinesis', TextTitle: 'CONSULENZA CHINESIOLOGICA E POSTURALE ', TextBody: 'Analisi accurata dell’allineamento corporeo, dei movimenti e delle catene muscolari per individuare compensi e disfunzioni.'},
-    { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'RIEDUCAZIONE POSTURALE', TextBody: 'Percorsi mirati per migliorare la postura, ridurre dolori cronici e ritrovare una corretta percezione del corpo.'},
-    { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'ATTIVITÀ FISICA ADATTATA', TextBody: 'Programmi di esercizi personalizzati in base all’età, al livello di forma fisica e agli obiettivi individuali.'},
-    { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'PILATES', TextBody: 'Allenamento a corpo libero per rafforzare il core, migliorare equilibrio e flessibilità, e prevenire disturbi posturali.'},
-    { Image: 'placeholder-image.png', ImageAlt: 'Eukinesis', TextTitle: 'REHAB PERSONAL TRAINING', TextBody: 'Allenamenti individuali con approccio chinesiologico per ottimizzare performance, postura e benessere globale.'}
+    { Image: 'LM-26-83.jpg', ImageAlt: 'Eukinesis', TextTitle: 'CONSULENZA CHINESIOLOGICA E POSTURALE ', TextBody: 'Analisi accurata dell’allineamento corporeo, dei movimenti e delle catene muscolari per individuare compensi e disfunzioni.'},
+    { Image: 'LM-26-32.jpg', ImageAlt: 'Eukinesis', TextTitle: 'RIEDUCAZIONE POSTURALE', TextBody: 'Percorsi mirati per migliorare la postura, ridurre dolori cronici e ritrovare una corretta percezione del corpo.'},
+    { Image: 'LM-26-75.jpg', ImageAlt: 'Eukinesis', TextTitle: 'ATTIVITÀ FISICA ADATTATA', TextBody: 'Programmi di esercizi personalizzati in base all’età, al livello di forma fisica e agli obiettivi individuali.'},
+    { Image: 'LM-26-31.jpg', ImageAlt: 'Eukinesis', TextTitle: 'PILATES', TextBody: 'Allenamento a corpo libero per rafforzare il core, migliorare equilibrio e flessibilità, e prevenire disturbi posturali.'},
+    { Image: 'LM-26-81.jpg', ImageAlt: 'Eukinesis', TextTitle: 'REHAB PERSONAL TRAINING', TextBody: 'Allenamenti individuali con approccio chinesiologico per ottimizzare performance, postura e benessere globale.'}
   ]
 
   private ourService = document.getElementById('ourServices');

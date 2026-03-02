@@ -6,6 +6,10 @@ app-card {
   opacity: 0;
 }
 
+image{ 
+  background-size: contain;
+}
+
 .animate{
   position: relative;
   animation-duration: 3s;  

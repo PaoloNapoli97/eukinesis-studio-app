@@ -11,7 +11,7 @@
 }
 
 .card-image {
-  width: 50%;
+  width: 60%;
   height: 100%; /* or any fixed height */
   overflow: hidden; /* ensures cropped parts don’t spill out */
 }
@@ -21,13 +21,15 @@
   height: 100%;
   object-fit: cover;       /* fills container, crops if needed */
   object-position: center; /* keeps the center visible */
+  overflow-clip-margin: unset;
+  image-rendering: smooth;
 }
 
 
 
 .card-text {
   display: flex;
-  width: 50%;
+  width: 40%;
   height: 100%;
   padding: 20px;
   flex-direction: column;
@@ -35,13 +37,23 @@
   background-color: white;
 }
 
+
+/* .card-text-title {
+  height: 20%;
+}
+
+.card-text-body{
+  height: 80%;
+  display: flex;
+  align-items: center;
+} */
 /* MEDIA RESPONSIVE */
 
 /* DESKTOP */
 @media (min-width: 992px){
   .card-container {
-    width: 70%;
-    height: 400px;
+    width: 80%;
+    height: 500px;
   }
 }
 
