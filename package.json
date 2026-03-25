@@ -29,7 +29,6 @@
     "@angular/build": "^21.2.0",
     "@angular/cli": "^21.2.0",
     "@angular/compiler-cli": "^21.2.0",
-    "@coreui/angular": "^1.0.10",
     "@types/jasmine": "~5.1.0",
     "baseline-browser-mapping": "^2.10.0",
     "gh-pages": "^5.0.0",
