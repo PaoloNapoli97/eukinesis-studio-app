@@ -11,41 +11,25 @@
   justify-content: space-around;
 }
 
-/* app-table {
-  display: table-row;
-} */
-
-app-table {
-  text-align: center;
-  display: contents;
-}
-
-table.greyGridTable {
-  /* border: 2px solid #4CAF50; */
+table.scheduleTable {
   width: 100%;
   text-align: center;
   border-collapse: collapse;
 }
-table.greyGridTable td, table.greyGridTable th {
-  /* border: 1px solid #FFFFFF; */
-  padding: 3px 4px;
+table.scheduleTable td, table.scheduleTable th {
+  padding: 8px 10px;
 }
-table.greyGridTable tbody td {
+table.scheduleTable tbody td {
   font-size: 13px;
 }
 
-table.greyGridTable thead {
-  border-bottom: 2px solid #4CAF50;
+table.scheduleTable thead {
+  border-bottom: 2px solid currentColor;
 }
-table.greyGridTable thead th {
+table.scheduleTable thead th {
   font-size: 15px;
   font-weight: bold;
-  color: #4CAF50;;
   text-align: center;
-  /* border-left: 2px solid #333333; */
-}
-table.greyGridTable thead th:first-child {
-  border-left: none;
 }
 
 /* MEDIA RESPONSIVE */
@@ -76,8 +60,7 @@ table.greyGridTable thead th:first-child {
     margin-top: 30px;
   }
 
-  table.greyGridTable {
-    /* border: 2px solid #4CAF50; */
+  table.scheduleTable {
     margin: 0 auto;
     margin-top: 20px;
     width: 60%;
@@ -101,8 +84,7 @@ table.greyGridTable thead th:first-child {
     padding-left: 0;
   }
 
-  table.greyGridTable {
-    /* border: 2px solid #4CAF50; */
+  table.scheduleTable {
     margin: 0 auto;
     margin-top: 20px;
     width: 60%;
@@ -127,8 +109,7 @@ table.greyGridTable thead th:first-child {
     padding-left: 0;
   }
 
-  table.greyGridTable {
-    /* border: 2px solid #4CAF50; */
+  table.scheduleTable {
     margin: 0 auto;
     margin-top: 20px;
     width: 90%;
@@ -137,8 +118,7 @@ table.greyGridTable thead th:first-child {
     font-size: 13px;
   }
 
-  table.greyGridTable tbody td {
+  table.scheduleTable tbody td {
     font-size: 10px;
   }
 }
-

@@ -1,4 +1,6 @@
-<ng-container >
-  <td>{{ day() }}</td>
-  <td>{{ hours() }}</td>
-</ng-container>
+<td>{{ day() }}</td>
+<td>
+  @for (range of hours(); track range) {
+    <span class="hours-range">{{ range }}</span>
+  }
+</td>

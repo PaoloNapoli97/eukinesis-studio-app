@@ -1,6 +1,9 @@
 <div>
-  <!-- <google-map [center]="center" width="800px">
-    <map-marker [position]="center"></map-marker>
-  </google-map> -->
-  <img src="mapTemp.png" alt="placeholder temporary map">
+  @if (mapsConsentGiven()) {
+    <google-map [center]="center" width="800px">
+      <map-marker [position]="center"></map-marker>
+    </google-map>
+  } @else {
+    <img src="mapTemp.png" alt="Mappa dello studio Eukinesis">
+  }
 </div>

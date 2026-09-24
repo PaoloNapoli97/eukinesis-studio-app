@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-list',
   imports: [],
   templateUrl: './list.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './list.component.css'
 })
 export class ListComponent {

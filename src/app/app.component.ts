@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, MainComponent, FooterComponent],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.css'
 })
 

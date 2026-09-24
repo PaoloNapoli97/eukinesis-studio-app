@@ -1,12 +1,18 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-table',
+  selector: 'tr[app-table-row]',
+  standalone: true,
   imports: [],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css'
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './table.component.css',
+  host: {
+    '[class.today]': 'isToday()'
+  }
 })
 export class TableComponent {
   day = input.required<string>();
-  hours = input.required<string>()
+  hours = input.required<string[]>();
+  isToday = input<boolean>(false);
 }

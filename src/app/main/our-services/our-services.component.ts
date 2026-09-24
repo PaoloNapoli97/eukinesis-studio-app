@@ -1,10 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { CardComponent } from "../../service/card/card.component";
 
 @Component({
   selector: 'app-our-services',
   imports: [CardComponent],
   templateUrl: './our-services.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './our-services.component.css',
 })
 export class OurServicesComponent {

@@ -7,6 +7,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
   selector: 'app-footer',
   imports: [MatButtonModule, MatDialogModule],
   templateUrl: './footer.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {

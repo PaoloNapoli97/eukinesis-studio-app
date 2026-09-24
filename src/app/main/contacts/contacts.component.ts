@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-contacts',
   imports: [FormsModule, ListComponent],
   templateUrl: './contacts.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contacts.component.css'
 })
 export class ContactsComponent {
