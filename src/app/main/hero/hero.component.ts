@@ -9,11 +9,11 @@ import { Component, ChangeDetectionStrategy, signal, computed, OnInit, OnDestroy
 })
 export class HeroComponent implements OnInit, OnDestroy {
 
+  // Sostituisci con i path reali delle tue immagini in /public
   images = [
     '/LM-26-5.jpg',
-    '/LM-26-126.jpg',
-    '/LM-26-11.jpg',
-    '/LM-26-16.jpg'
+    '/LM-26-6.jpg',
+    '/LM-26-7.jpg'
   ];
 
   // Clone della prima immagine in fondo alla fila: serve per lo scroll
@@ -33,7 +33,20 @@ export class HeroComponent implements OnInit, OnDestroy {
   private readonly slideDurationMs = 5000;
 
   ngOnInit(): void {
-    this.startAutoplay();
+    // Precarica tutte le immagini in memoria prima di far partire l'autoplay:
+    // così la prima transizione (e le successive) non devono scaricare/decodificare
+    // l'immagine proprio mentre l'animazione è in corso — quello causa il micro-scatto.
+    this.preloadImages().then(() => this.startAutoplay());
+  }
+
+  private preloadImages(): Promise<void> {
+    const loaders = this.extendedImages.map(src => new Promise<void>(resolve => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.onerror = () => resolve(); // un'immagine rotta non deve bloccare tutto il carousel
+      img.src = src;
+    }));
+    return Promise.all(loaders).then(() => undefined);
   }
 
   ngOnDestroy(): void {

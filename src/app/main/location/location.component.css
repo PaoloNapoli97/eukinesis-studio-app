@@ -46,6 +46,7 @@ table.scheduleTable thead th {
 
   .map-container app-map {
     width: 70%;
+    display: block;
   }
 }
 
@@ -54,6 +55,10 @@ table.scheduleTable thead th {
   .map-container{
     display: flex;
     flex-direction: column;
+  }
+
+  .map-container app-map {
+    display: block;
   }
 
   .position-text{
@@ -79,6 +84,10 @@ table.scheduleTable thead th {
     flex-direction: column;
   }
 
+  .map-container app-map {
+    display: block;
+  }
+
   .position-text{
     margin-top: 30px;
     padding-left: 0;
@@ -102,6 +111,10 @@ table.scheduleTable thead th {
   .map-container{
     display: flex;
     flex-direction: column;
+  }
+
+  .map-container app-map {
+    display: block;
   }
 
   .position-text{

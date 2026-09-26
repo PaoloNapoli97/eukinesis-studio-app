@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { GoogleMap, MapMarker } from '@angular/google-maps';
 import { CookieConsentService } from '../../../core/cookie-consent.service';
 
 @Component({
   selector: 'app-map',
-  imports: [GoogleMapsModule],
+  imports: [GoogleMap, MapMarker],
   templateUrl: './map.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './map.component.css'

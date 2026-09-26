@@ -19,6 +19,7 @@
   height: 100%;
   width: 100%;
   will-change: transform;
+  transform: translateZ(0); /* forza un layer GPU dedicato, transizione più fluida */
 }
 
 .hero-slide {
