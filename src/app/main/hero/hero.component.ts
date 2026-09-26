@@ -9,22 +9,20 @@ import { Component, ChangeDetectionStrategy, signal, computed, OnInit, OnDestroy
 })
 export class HeroComponent implements OnInit, OnDestroy {
 
-  // Sostituisci con i path reali delle tue immagini in /public
   images = [
     '/LM-26-5.jpg',
-    '/LM-26-6.jpg',
-    '/LM-26-7.jpg'
+    '/LM-26-126.jpg',
+    '/LM-26-11.jpg',
+    '/LM-26-16.jpg'
   ];
 
-  // Clone della prima immagine in fondo alla fila: serve per lo scroll
-  // infinito senza scatto visibile quando si torna all'inizio
+  // Clone first array image to 5th and last slot to keep the infinite scrool
   extendedImages = [...this.images, this.images[0]];
 
   currentIndex = signal(0);
   transitionEnabled = signal(true);
 
-  // Indice "reale" (0..images.length-1) usato per evidenziare il dot corretto,
-  // anche quando currentIndex è sul clone finale
+  //show the real index of the image, not the extended one
   realIndex = computed(() => this.currentIndex() % this.images.length);
 
   trackTransform = computed(() => `translateX(${-this.currentIndex() * 100}%)`);
@@ -33,9 +31,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   private readonly slideDurationMs = 5000;
 
   ngOnInit(): void {
-    // Precarica tutte le immagini in memoria prima di far partire l'autoplay:
-    // così la prima transizione (e le successive) non devono scaricare/decodificare
-    // l'immagine proprio mentre l'animazione è in corso — quello causa il micro-scatto.
+    // should preload all images but I don't think it's working. Shall check later
     this.preloadImages().then(() => this.startAutoplay());
   }
 
@@ -43,7 +39,7 @@ export class HeroComponent implements OnInit, OnDestroy {
     const loaders = this.extendedImages.map(src => new Promise<void>(resolve => {
       const img = new Image();
       img.onload = () => resolve();
-      img.onerror = () => resolve(); // un'immagine rotta non deve bloccare tutto il carousel
+      img.onerror = () => resolve(); //Fix eventual error
       img.src = src;
     }));
     return Promise.all(loaders).then(() => undefined);
@@ -60,16 +56,13 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.startAutoplay();
   }
 
-  // Quando l'animazione arriva al clone (ultimo elemento della fila),
-  // torniamo istantaneamente al vero indice 0 senza transizione:
-  // da fuori sembra che il nastro continui a scorrere in avanti
+  // Set indext to 0 when the last image is reached, to create an infinite loop effect
   onTransitionEnd(): void {
     if (this.currentIndex() === this.extendedImages.length - 1) {
       this.transitionEnabled.set(false);
       this.currentIndex.set(0);
 
-      // Riattiva la transizione al frame successivo: se lo facessimo
-      // subito, il browser animerebbe anche questo salto
+      //reload animation frame to ensure the transition is disabled before re-enabling it
       requestAnimationFrame(() => {
         requestAnimationFrame(() => this.transitionEnabled.set(true));
       });
