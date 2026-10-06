@@ -31,7 +31,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   private readonly slideDurationMs = 5000;
 
   ngOnInit(): void {
-    // should preload all images but I don't think it's working. Shall check later
+    // It "should" preload all images but I don't think it's working. Shall check later
     this.preloadImages().then(() => this.startAutoplay());
   }
 

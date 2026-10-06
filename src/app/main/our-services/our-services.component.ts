@@ -21,15 +21,14 @@ export class OurServicesComponent implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
 
   ngAfterViewInit(): void {
-    // rootMargin negativo = l'animazione parte un po' prima che la sezione
-    // sia completamente visibile, come faceva il tuo "-100" originale
+    //New approach that replace the winwow scroll event listener with IntersectionObserver function, which is more efficient and accurate for detecting when an element enters the viewport.
     this.observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const elements = this.elementRef.nativeElement.querySelectorAll('.anim');
             elements.forEach((el: Element) => el.classList.add('animate'));
-            this.observer?.disconnect(); // fatto una volta sola, come il tuo "flag"
+            this.observer?.disconnect(); // Stop after first interactiion
           }
         }
       },
