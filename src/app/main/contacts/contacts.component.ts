@@ -28,7 +28,7 @@ export class ContactsComponent {
     {description: 'Email', link: 'mailto:info@eukinesistudio.it', title: 'info@eukinesistudio.it', icon: 'envelope-solid.svg'},
     {description: 'Telefono', link: 'https://wa.me/3518012460', title: '351 801 2460', icon: 'whatsapp-brands.svg'},
     {description: 'Socials', socials: [
-      {link: 'https://www.facebook.com/profile.php?id=61574823591904', title: 'Facebook', handle: 'Eukinesi Studio', icon: 'facebook-brands.svg'},
+      {link: 'https://www.facebook.com/profile.php?id=61574823591904', title: 'Facebook', handle: 'Eukinesistudio', icon: 'facebook-brands.svg'},
       {link: 'https://www.instagram.com/eukinesistudio/', title: 'Instagram', handle: '@eukinesistudio', icon: 'instagram-brands-solid-full.svg'}
     ]}
   ];
