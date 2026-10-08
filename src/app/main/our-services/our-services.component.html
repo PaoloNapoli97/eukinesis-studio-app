@@ -3,7 +3,7 @@
     <h2>I nostri Servizi</h2>
     <div class="service-card-container">
       @for (service of OurServices; track $index) {
-        <app-card class="anim" [image]="service.Image" [imageAlt]="service.ImageAlt" [textTitle]="service.TextTitle" [textBody]="service.TextBody"></app-card>
+        <app-card class="anim" [reverse]="$odd" [image]="service.Image" [imageAlt]="service.ImageAlt" [textTitle]="service.TextTitle" [textBody]="service.TextBody"></app-card>
       } 
     </div>
   </div>

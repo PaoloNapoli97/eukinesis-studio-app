@@ -4,7 +4,7 @@
       class="hero-track"
       [style.transform]="trackTransform()"
       [style.transition]="transitionEnabled() ? 'transform 1s ease-in-out' : 'none'"
-      (transitionend)="onTransitionEnd()">
+      (transitionend)="onTransitionEnd($event)">
       @for (image of extendedImages; track $index) {
         <div class="hero-slide" [style.background-image]="'url(' + image + ')'"></div>
       }

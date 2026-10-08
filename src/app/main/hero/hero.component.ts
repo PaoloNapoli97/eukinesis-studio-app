@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, computed, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, OnInit, OnDestroy, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -57,20 +57,27 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   // Set indext to 0 when the last image is reached, to create an infinite loop effect
-  onTransitionEnd(): void {
-    if (this.currentIndex() === this.extendedImages.length - 1) {
-      this.transitionEnabled.set(false);
-      this.currentIndex.set(0);
+  onTransitionEnd(event: TransitionEvent): void {
+    // ignora eventi che non arrivano dal track stesso
+    if (event.target !== event.currentTarget || event.propertyName !== 'transform') return;
 
-      //reload animation frame to ensure the transition is disabled before re-enabling it
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => this.transitionEnabled.set(true));
-      });
+    if (this.currentIndex() >= this.extendedImages.length - 1) {
+      this.snapToStart();
     }
+}
+
+  private snapToStart(): void {
+    this.transitionEnabled.set(false);
+    this.currentIndex.set(0);
   }
 
   private startAutoplay(): void {
     this.intervalId = setInterval(() => {
+      // Rete di sicurezza: se siamo sul clone (o oltre) e transitionend non è arrivato, riporta a 0
+      if (this.currentIndex() >= this.extendedImages.length - 1) {
+        this.snapToStart();
+        return;
+      }
       this.transitionEnabled.set(true);
       this.currentIndex.update(i => i + 1);
     }, this.slideDurationMs);
@@ -94,4 +101,10 @@ export class HeroComponent implements OnInit, OnDestroy {
       }, 50);
     }
   }
+
+  // It should stop the autoplay when the user switches to another tab and restart it when the user comes back to the tab
+  @HostListener('document:visibilitychange')
+    onVisibilityChange(): void {
+      document.hidden ? this.stopAutoplay() : (this.stopAutoplay(), this.startAutoplay());
+    }
 }

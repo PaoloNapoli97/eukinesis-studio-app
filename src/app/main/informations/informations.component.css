@@ -94,6 +94,10 @@ h2 {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .title-col{
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
   section {
     padding: 40px 6%;
   }

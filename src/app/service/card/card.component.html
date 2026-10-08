@@ -1,8 +1,9 @@
-<div class="card-container">
+<div class="card-container" [class.card-reverse]="reverse()">
   <div class="card-image">
-    <img [src]=" image() " [alt]="imageAlt()">
+    <img [src]="image()" [alt]="imageAlt()">
   </div>
   <div class="card-text">
+    <div class="card-rule"></div>
     <div class="card-text-title"><h3>{{ textTitle() }}</h3></div>
     <div class="card-text-body"><p>{{ textBody() }}</p></div>
   </div>

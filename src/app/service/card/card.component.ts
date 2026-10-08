@@ -12,4 +12,6 @@ export class CardComponent {
   imageAlt = input.required<string>();
   textTitle = input.required<string>();
   textBody = input.required<string>();
+  reverse = input(false);
 }
+

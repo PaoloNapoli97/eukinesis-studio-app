@@ -1,136 +1,145 @@
-.card-container{
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  width: 90%;
+  /* height: 420px; */             /* uguale per tutte le card */
+  margin: 0 auto 4rem;
+  overflow: hidden;          /* taglia gli angoli: un solo arrotondamento esterno */
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 45px rgba(48, 66, 60, 0.11);
+  font-family: 'DM Sans', sans-serif;
+  transition: transform 350ms ease;
 }
 
+.card-container:hover {
+  transform: translateY(-5px);
+}
+
+/* IMMAGINE */
 .card-image {
-  width: 50%;
-  height: 100%; /* or any fixed height */
-  overflow: hidden; /* ensures cropped parts don’t spill out */
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #d6e0dc;
 }
 
 .card-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills container, crops if needed */
-  object-position: center; /* keeps the center visible */
-  overflow-clip-margin: unset;
-  image-rendering: smooth;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.78) contrast(0.96);
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.25, 1), filter 400ms ease;
 }
 
+.card-container:hover .card-image img {
+  transform: scale(1.045);
+  filter: saturate(0.92) contrast(1);
+}
 
-
+/* TESTO */
 .card-text {
   display: flex;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
+  min-height: 0;
   overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.card-rule {
+  width: 3rem;
+  height: 3px;
+  margin-bottom: 1.75rem;
+  border-radius: 999px;
+  background: #6f9388;
 }
 
 .card-text-title {
   text-transform: uppercase;
 }
 
+.card-text-title h3 {
+  max-width: 26rem;
+  margin: 0 0 1.5rem;
+  color: #193b38;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.05rem, 1.55vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
 .card-text-body {
   white-space: pre-line;
-
 }
 
-/* .card-text-title {
-  height: 20%;
+.card-text-body p {
+  max-width: 34rem;
+  margin: 0;
+  color: #52625e;
+  font-size: clamp(0.94rem, 1.15vw, 1.05rem);
+  line-height: 1.65;
 }
 
-.card-text-body{
-  height: 80%;
-  display: flex;
-  align-items: center;
-} */
-/* MEDIA RESPONSIVE */
-
-/* DESKTOP FIT FONT */
-@media (min-width: 901px) and (max-width: 1100px){
-  .card-text-title {
-    font-size: 0.9em;
-  }
-
-  .card-text-body{
-    font-size: 0.8em;
-  }
+/* VERSIONE INVERSA: immagine a destra */
+.card-reverse .card-image {
+  order: 2;
 }
 
-
-/* DESKTOP */
-@media (min-width: 992px){
-  .card-container {
-    width: 90%;
-    height: 500px;
-  }
+.card-reverse .card-text {
+  order: 1;
 }
 
-/* TABLET */
-@media (min-width: 768px) and (max-width: 991px) {
-  .card-container {
-    width: 90%;
-    height: 400px;
-  }
-}
-
-/* TABLET FON */
-@media (min-width: 600px) and (max-width: 900px){
-  .card-text-title {
-    font-size: 0.9em;
-  }
-
-  .card-text-body{
-    font-size: 0.7em;
-  }
-}
-
-/* PHONE */
-@media (min-width: 601px) and (max-width: 767px){
-  .card-container {
-    width: 100%;
-    height: 400px;
-  }
-}
-
-/* PHONE SMALL */
-@media (max-width: 600px){
-  .card-container {
-    width: 100%;
-    height: 700px;
+/* MOBILE */
+@media (max-width: 800px) {
+  .card-container,
+  .card-reverse {
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
   }
 
   .card-image {
     width: 100%;
-    height: 60%;
+    height: 15rem;
+    min-height: 15rem;
+  }
+
+  .card-reverse .card-image,
+  .card-reverse .card-text {
+    order: initial;
   }
 
   .card-text {
-    width: 90%;
-    padding: 4px;
-    height: 40%;
+    padding: 2rem 1.5rem 2.25rem;
   }
 
-    .card-text-title {
-    font-size: 0.7em;
+  .card-rule {
+    margin-bottom: 1.25rem;
   }
 
-  .card-text-body{
-    font-size: 0.6em;
+  .card-text-title h3 {
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .card-text-body p {
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 }
 
-/* NOTE: Seems good at it is now but might need some adjustment in the future */
+@media (prefers-reduced-motion: reduce) {
+  .card-container,
+  .card-image img {
+    transition: none;
+  }
+}
